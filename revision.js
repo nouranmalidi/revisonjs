@@ -105,3 +105,47 @@ let mapVetements = new Map([
     ["robes",300]
 
 ]); 
+
+console.log(mapVetements);
+
+// J'utilise des Getters et Setters pour manipuler la map
+// Getteur (anglais) signifie accesseurs.Il permet d'accéder à la map.
+// Pour accéder a la map j'utilise la méthode get ().
+
+console.log("Il y'a ",mapVetements.get("t-shirt"),"t-shirt");
+console.log("Il y'a ",mapVetements.get("salouva"),"salouva");
+
+// Setter (anglais) signifie modifieur.
+// Il permet de modifier le couple dans la map ou d'ajuster un nouveau couple.
+// Pour modifier, j'utilise la éthode set().
+
+mapVetements.set("pantalon", 150);
+
+console.log(mapVetements);
+console.log("Taille de la map",mapVetements.size);
+
+let text = "";
+mapVetements.forEach (function(value, key) {
+  text += key + ' = ' + value;
+})
+console.log("Parcours de la map vêtement", text);
+
+console.log(mapVetements.has("robes"));
+
+let couplesMap = mapVetements.entries();
+console.log("couplesMap : ",couplesMap);
+
+for (let couple of couplesMap) {
+    console.log(couple);
+}
+
+// La méthode value () récupère uniuement les valeurs de la map.
+
+let valeurs = mapVetements.values();
+console.log(" valeurs Map : ", valeurs);
+
+// La boucle for () récupère chaque valeur individuellement 
+
+for (let valeur of valeurs) {
+    console.log(valeur);
+}
